@@ -17,10 +17,24 @@ export const getMeals = createAsyncThunk(
     }
   }
 );
+export const getMeal = createAsyncThunk(
+  "rockets/getMeal",
+  async (id, thunkAPI) => {
+    try {
+      const res = await axios(`${API_URL}/lookup.php?i=${id}`);
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(
+        error?.data?.message || "Something went wrong!"
+      );
+    }
+  }
+);
 
 const initialState = {
   isLoading: false,
   meals: [],
+  meal: {},
 };
 
 const mealsSlice = createSlice({
@@ -35,15 +49,31 @@ const mealsSlice = createSlice({
       })
       .addCase(getMeals.fulfilled, (state, action) => {
         state.isLoading = false;
-        const res = action.payload;
-
-        console.log("RESULTS> ", res);
+        const res = action.payload?.meals;
+        console.log("MEALS>", res);
 
         state.meals = res;
       })
       .addCase(getMeals.rejected, (state) => {
         state.isLoading = false;
         state.meals = [];
+      });
+
+    // get single meal
+    builder
+      .addCase(getMeal.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getMeal.fulfilled, (state, action) => {
+        state.isLoading = false;
+        const res = action.payload?.meals?.[0];
+        console.log("Single meal>", res);
+
+        state.meal = res;
+      })
+      .addCase(getMeal.rejected, (state) => {
+        state.isLoading = false;
+        state.meal = {};
       });
   },
 });
