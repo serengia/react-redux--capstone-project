@@ -10,7 +10,7 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <NavLink to="/">Meals</NavLink>
+              <NavLink to="/">Covid Countries Data</NavLink>
             </li>
             <li>
               <NavLink to="/contact">Contact</NavLink>

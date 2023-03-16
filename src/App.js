@@ -8,12 +8,12 @@ import {
 } from "react-router-dom";
 import RootLayout from "./Layout/RootLayout";
 import ContactPage from "./pages/ContactPage";
-import MealsPage from "./pages/MealsPage";
+import CountriesDataPage from "./pages/CountriesDataPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route index element={<MealsPage />} />
+      <Route index element={<CountriesDataPage />} />
       <Route path="/contact" element={<ContactPage />} />
     </Route>
   )

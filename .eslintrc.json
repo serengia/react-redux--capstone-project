@@ -37,7 +37,8 @@
     "import/no-extraneous-dependencies": "off",
     "operator-linebreak": "off",
     "dot-notation": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "no-underscore-dangle": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
 }
