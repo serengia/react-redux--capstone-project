@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Hero from "../components/Hero";
 import { getCountryData, getCountriesData } from "../redux/countriesSlice";
 
 function CountriesDataPage() {
@@ -11,7 +12,8 @@ function CountriesDataPage() {
   }, [dispatch]);
 
   return (
-    <div>
+    <main>
+      <Hero />
       <ul>
         {countries.map((c, i) => (
           // eslint-disable-next-line react/no-array-index-key
@@ -29,7 +31,7 @@ function CountriesDataPage() {
           </li>
         ))}
       </ul>
-    </div>
+    </main>
   );
 }
 

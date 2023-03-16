@@ -4,13 +4,13 @@ import s from "./Header.module.scss";
 
 function Header() {
   return (
-    <header>
-      <div className={s["header-container"]}>
-        <div className={s["logo-wrapper"]}>Logo</div>
+    <header className={s["header"]}>
+      <div className={`${s["header-container"]} row`}>
+        <div className={s["logo-wrapper"]}>Covid-19 Data</div>
         <nav>
-          <ul>
+          <ul className={s["nav-list"]}>
             <li>
-              <NavLink to="/">Covid Countries Data</NavLink>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
               <NavLink to="/contact">Contact</NavLink>
