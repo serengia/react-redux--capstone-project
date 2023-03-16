@@ -8,7 +8,7 @@ export default function Filter() {
   return (
     <div className={s["filter"]}>
       <label htmlFor="cars">
-        <h3>Filter by Country</h3>
+        <h3>Filter by reported cases</h3>
       </label>
       <select
         name="cars"

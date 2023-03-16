@@ -2,10 +2,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "https://disease.sh/v3/covid-19/countries";
+const API_URL = "https://disease.sh/v3/covid-19/continents";
 
-export const getCountriesData = createAsyncThunk(
-  "countries/getCountriesData",
+export const getContinentsData = createAsyncThunk(
+  "continents/getContinentsData",
   async (_, thunkAPI) => {
     try {
       const res = await axios(`${API_URL}`);
@@ -17,8 +17,8 @@ export const getCountriesData = createAsyncThunk(
     }
   }
 );
-export const getCountryData = createAsyncThunk(
-  "countries/getCountryData",
+export const getContinentData = createAsyncThunk(
+  "continents/getContinentData",
   async (id, thunkAPI) => {
     try {
       const res = await axios(`${API_URL}/${id}`);
@@ -33,47 +33,46 @@ export const getCountryData = createAsyncThunk(
 
 const initialState = {
   isLoading: false,
-  countries: [],
-  country: {},
+  continents: [],
+  continent: {},
 };
 
-const countriesSlice = createSlice({
-  name: "countries",
+const continentsSlice = createSlice({
+  name: "continents",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     // get meals
     builder
-      .addCase(getCountriesData.pending, (state) => {
+      .addCase(getContinentsData.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getCountriesData.fulfilled, (state, action) => {
+      .addCase(getContinentsData.fulfilled, (state, action) => {
         state.isLoading = false;
         const res = action.payload;
-        // console.log("Countries>", res);
 
-        state.countries = res;
+        state.continents = res;
       })
-      .addCase(getCountriesData.rejected, (state) => {
+      .addCase(getContinentsData.rejected, (state) => {
         state.isLoading = false;
       });
 
     // get single meal
     builder
-      .addCase(getCountryData.pending, (state) => {
+      .addCase(getContinentData.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getCountryData.fulfilled, (state, action) => {
+      .addCase(getContinentData.fulfilled, (state, action) => {
         state.isLoading = false;
         const res = action.payload;
 
-        state.country = res;
+        state.continent = res;
       })
-      .addCase(getCountryData.rejected, (state) => {
+      .addCase(getContinentData.rejected, (state) => {
         state.isLoading = false;
       });
   },
 });
 
-export const countriesActions = countriesSlice.actions;
-export default countriesSlice.reducer;
+export const continentsActions = continentsSlice.actions;
+export default continentsSlice.reducer;

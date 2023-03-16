@@ -2,6 +2,7 @@ import React from "react";
 import Filter from "./Filter";
 import s from "./Hero.module.scss";
 import OptionsChecks from "./OptionsChecks";
+// import SearchByCounty from "./SearchByCounty";
 
 export default function Hero() {
   return (
@@ -11,6 +12,8 @@ export default function Hero() {
         <div className={s["filter-container"]}>
           <OptionsChecks />
           <Filter />
+          <Filter />
+          {/* <SearchByCounty /> */}
         </div>
       </div>
     </section>

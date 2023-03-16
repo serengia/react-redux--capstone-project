@@ -6,10 +6,7 @@ export default function SearchByCounty() {
     <div className={s["search-wrapper"]}>
       <h3>Search by Country</h3>
       <div className={s["search-box"]}>
-        <form>
-          <input type="text" placeholder="e.g. Kenya" />
-          <button type="submit">Search</button>
-        </form>
+        <input type="text" placeholder="e.g. Kenya" />
       </div>
     </div>
   );
