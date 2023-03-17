@@ -1,0 +1,63 @@
+.country {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0 0.5re 1rem rgba(0, 0, 0, 0.02);
+
+  .header {
+    display: flex;
+    margin: 1rem 0;
+    gap: 1rem;
+    .flag {
+      flex: 1;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .details {
+      flex: 2;
+    }
+
+    .title {
+      span {
+        color: var(--color-text-dark-1);
+      }
+    }
+  }
+
+  .stats {
+    background-color: rgba(0, 17, 40, 0.119);
+    border-radius: 3px;
+    padding: 1rem;
+    .stats-list {
+      padding: 1rem 0;
+      list-style: none;
+      //   columns: 2;
+      font-size: 1.6rem;
+      li {
+        span {
+          font-weight: 600;
+          color: var(--color-text-dark-1);
+        }
+      }
+    }
+  }
+
+  .updated-time {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    // color: var(--color-text-dark-1);
+    font-weight: 600;
+    gap: 1rem;
+    .icon {
+      font-size: 2.4rem;
+      color: var(--color-text-dark-1);
+      font-weight: bold;
+    }
+    span {
+      font-weight: 600;
+      color: var(--color-text-dark-1);
+    }
+  }
+}

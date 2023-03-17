@@ -11,8 +11,8 @@ export default function Hero() {
         <h1 className={s["main-text"]}>Covid-19 Live Global Data</h1>
         <div className={s["filter-container"]}>
           <OptionsChecks />
-          <Filter />
-          <Filter />
+          <Filter title="Filter by reported cases" />
+          <Filter title="Filter by recovery rates" />
           {/* <SearchByCounty /> */}
         </div>
       </div>

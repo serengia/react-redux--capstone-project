@@ -31,10 +31,23 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
-  color: var(--color-main);
+  color: #333;
+  font-weight: 500;
 }
 
 .row {
   max-width: 90%;
   margin: 0 auto;
+}
+
+.divider {
+  border: none;
+  height: 2px;
+  background-color: var(--color-grey-2);
+}
+
+.divider-2 {
+  border: none;
+  height: 4px;
+  background-color: rgba(0, 17, 40, 0.408);
 }
