@@ -7,6 +7,22 @@
     align-items: center;
     .logo-wrapper {
       margin-right: auto;
+
+      .logo {
+        font-weight: 600;
+        font-size: 2.4rem;
+
+        color: var(--color-text-dark-3);
+        &:link,
+        &:visited {
+          text-decoration: none;
+          transition: all 0.2s;
+        }
+        &:hover,
+        &:active {
+          color: var(--color-text-dark-1);
+        }
+      }
     }
     .nav-list {
       list-style: none;
@@ -14,9 +30,18 @@
       gap: 4rem;
       li {
         a {
+          font-size: 1.6rem;
+          font-weight: 600;
+
           &:link,
           &:visited {
+            color: #333;
             text-decoration: none;
+            transition: all 0.2s;
+          }
+          &:hover,
+          &:active {
+            color: var(--color-text-dark-1);
           }
         }
       }
