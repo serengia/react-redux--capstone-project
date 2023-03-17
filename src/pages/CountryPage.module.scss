@@ -1,0 +1,16 @@
+.country-page {
+  .body-content {
+    padding: 2rem 0;
+  }
+}
+
+.extra-components {
+  color: var(--color-text-light-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15rem;
+  h1 {
+    font-size: 5rem;
+  }
+}

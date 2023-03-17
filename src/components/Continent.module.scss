@@ -57,6 +57,22 @@
           margin-bottom: 1rem;
         }
       }
+
+      .view-country-link {
+        font-size: 1.6rem;
+        font-weight: 500;
+
+        &:link,
+        &:visited {
+          color: #333;
+          text-decoration: none;
+          transition: all 0.2s;
+        }
+        &:hover,
+        &:active {
+          color: var(--color-text-dark-1);
+        }
+      }
     }
   }
 

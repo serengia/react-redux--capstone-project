@@ -32,13 +32,14 @@
     .stats-list {
       padding: 1rem 0;
       list-style: none;
-      //   columns: 2;
       font-size: 1.6rem;
+      columns: 2;
       li {
         span {
           font-weight: 600;
           color: var(--color-text-dark-1);
         }
+        margin-bottom: 0.6rem;
       }
     }
   }

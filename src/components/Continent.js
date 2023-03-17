@@ -1,33 +1,7 @@
-/* eslint-disable no-unused-vars */
-
 import React, { useState } from "react";
 import { HiMinus, HiPlus, HiOutlineClock } from "react-icons/hi";
+import { Link } from "react-router-dom";
 import s from "./Continent.module.scss";
-
-// {
-//     "updated": 1679013814456,
-//     "cases": 125134719,
-//     "todayCases": 4227,
-//     "deaths": 1616748,
-//     "todayDeaths": 83,
-//     "recovered": 120594046,
-//     "todayRecovered": 15298,
-//     "active": 2923925,
-//     "critical": 7447,
-//     "casesPerOneMillion": 209206.08,
-//     "deathsPerOneMillion": 2702.96,
-//     "tests": 1306826985,
-//     "testsPerOneMillion": 2184814.56,
-//     "population": 598140916,
-//     "continent": "North America",
-//     "activePerOneMillion": 4888.35,
-//     "recoveredPerOneMillion": 201614.77,
-//     "criticalPerOneMillion": 12.45,
-//     "continentInfo": {
-//       "lat": 31.6768272,
-//       "long": -146.4707474
-//     },
-//     "countries": []
 
 export function timestampToDate(timestamp) {
   const date = new Date(timestamp);
@@ -39,6 +13,7 @@ export function timestampToDate(timestamp) {
 
 export default function Continent(props) {
   const [showCountries, setShowCountries] = useState(false);
+
   const {
     updated,
     cases,
@@ -53,6 +28,7 @@ export default function Continent(props) {
     critical,
     countries: countriesArr,
   } = props.data;
+
   return (
     <div className={s["continent"]}>
       <h2 className={s["title"]}>
@@ -121,7 +97,14 @@ export default function Continent(props) {
           <div className={s["countries"]}>
             <ul>
               {countriesArr.map((c) => (
-                <li key={c}>{c}</li>
+                <li key={c}>
+                  <Link
+                    className={s["view-country-link"]}
+                    to={`/countries/${c}`}
+                  >
+                    {c}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>

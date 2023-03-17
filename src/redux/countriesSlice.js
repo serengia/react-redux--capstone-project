@@ -35,12 +35,18 @@ const initialState = {
   isLoading: false,
   countries: [],
   country: {},
+  countrySearchTerm: "",
 };
 
 const countriesSlice = createSlice({
   name: "countries",
   initialState,
-  reducers: {},
+  reducers: {
+    triggerCountrySearch: (state, action) => {
+      const searchTerm = action.payload;
+      state.countrySearchTerm = searchTerm?.toLowerCase();
+    },
+  },
   extraReducers: (builder) => {
     // get meals
     builder

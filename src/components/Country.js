@@ -4,19 +4,6 @@ import { timestampToDate } from "./Continent";
 import s from "./Country.module.scss";
 import flagPlaceholder from "../extraImages/flag-placeholder.png";
 
-// {
-//     "updated": 0,
-//     "country": "string",
-//     "countryInfo": {
-//       "_id": 0,
-//       "iso2": "string",
-//       "iso3": "string",
-//       "lat": 0,
-//       "long": 0,
-//       "flag": "string"
-//     }
-//   }
-
 export default function Country(props) {
   const {
     updated,
@@ -32,7 +19,7 @@ export default function Country(props) {
     active,
     critical,
     countryInfo,
-  } = props.data;
+  } = props?.data;
   return (
     <div className={s["country"]}>
       <hr className="divider-2" />

@@ -3,12 +3,26 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const API_URL = "https://disease.sh/v3/covid-19/continents";
+const API_URL_GLOBAL = "https://disease.sh/v3/covid-19/all";
 
 export const getContinentsData = createAsyncThunk(
   "continents/getContinentsData",
   async (_, thunkAPI) => {
     try {
       const res = await axios(`${API_URL}`);
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(
+        error?.data?.message || "Something went wrong!"
+      );
+    }
+  }
+);
+export const getGlobalData = createAsyncThunk(
+  "continents/getGlobalData",
+  async (_, thunkAPI) => {
+    try {
+      const res = await axios(`${API_URL_GLOBAL}`);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(
@@ -35,14 +49,22 @@ const initialState = {
   isLoading: false,
   continents: [],
   continent: {},
+  continentSearchTerm: "",
+  global: {},
 };
 
 const continentsSlice = createSlice({
   name: "continents",
   initialState,
-  reducers: {},
+
+  reducers: {
+    triggerContinentSearch: (state, action) => {
+      const searchTerm = action.payload;
+      state.continentSearchTerm = searchTerm?.toLowerCase();
+    },
+  },
   extraReducers: (builder) => {
-    // get meals
+    // get continents
     builder
       .addCase(getContinentsData.pending, (state) => {
         state.isLoading = true;
@@ -57,7 +79,7 @@ const continentsSlice = createSlice({
         state.isLoading = false;
       });
 
-    // get single meal
+    // get single continent
     builder
       .addCase(getContinentData.pending, (state) => {
         state.isLoading = true;
@@ -69,6 +91,22 @@ const continentsSlice = createSlice({
         state.continent = res;
       })
       .addCase(getContinentData.rejected, (state) => {
+        state.isLoading = false;
+      });
+
+    // get global data
+    builder
+      .addCase(getGlobalData.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getGlobalData.fulfilled, (state, action) => {
+        state.isLoading = false;
+        const res = action.payload;
+        console.log("HRE IS GLOBAL DATA>", res);
+
+        state.global = res;
+      })
+      .addCase(getGlobalData.rejected, (state) => {
         state.isLoading = false;
       });
   },

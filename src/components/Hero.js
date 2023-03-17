@@ -1,13 +1,8 @@
 import React from "react";
+import SearchByCounty from "./SearchByCounty";
 import Filter from "./Filter";
 import s from "./Hero.module.scss";
 import OptionsChecks from "./OptionsChecks";
-// eslint-disable-next-line import/no-absolute-path, no-unused-vars
-const bgImage = "../extraImages/covid-banner.png";
-// eslint-disable-next-line no-unused-vars
-const bgImage2 = "../../public/img/covid-banner.png";
-// eslint-disable-next-line import/first, no-unused-vars
-import bgImage3 from "../extraImages/covid-banner.png";
 
 export default function Hero({
   title = "Covid-19 Live Global Data",
@@ -25,7 +20,8 @@ export default function Hero({
           <div className={s["filter-container"]}>
             <OptionsChecks />
             <Filter title="Filter by reported cases" />
-            <Filter title="Filter by recovery rates" />
+            {/* <Filter title="Filter by recovery rates" /> */}
+            <SearchByCounty />
           </div>
         )}
       </div>

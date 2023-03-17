@@ -4,12 +4,4 @@
   .display-wrapper {
     padding: 4rem 0;
   }
-
-  .countries-view {
-    ul {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3rem;
-    }
-  }
 }

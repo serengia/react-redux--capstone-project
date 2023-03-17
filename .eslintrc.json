@@ -38,7 +38,8 @@
     "operator-linebreak": "off",
     "dot-notation": "off",
     "camelcase": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "function-paren-newline": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
 }
