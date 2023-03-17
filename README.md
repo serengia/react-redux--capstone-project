@@ -71,9 +71,9 @@ This application utilizes the food API to display different foods with their res
 
 ## 🚀 Live project <a name="live-demo"></a>
 
-Coming soon
+View the live project
 
-- [Live Project Link](https://serecode-spacex-travelers-app.netlify.app)
+- [Live Project Link](https://covid-19-data-app.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

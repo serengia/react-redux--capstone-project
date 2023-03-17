@@ -2,6 +2,7 @@ import React from "react";
 import { HiOutlineClock } from "react-icons/hi";
 import { timestampToDate } from "./Continent";
 import s from "./Country.module.scss";
+import flagPlaceholder from "../extraImages/flag-placeholder.png";
 
 // {
 //     "updated": 0,
@@ -37,7 +38,7 @@ export default function Country(props) {
       <hr className="divider-2" />
       <div className={s["header"]}>
         <img
-          src={countryInfo?.flag}
+          src={countryInfo?.flag || { flagPlaceholder }}
           alt={`${country} flag`}
           className={s["flag"]}
         />

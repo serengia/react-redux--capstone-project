@@ -1,0 +1,22 @@
+.contact-page {
+  background-color: #f1f3f5;
+  padding-bottom: 4rem;
+  .body-content {
+    padding: 4rem;
+    background-color: #fff;
+    z-index: 10;
+    position: relative;
+    margin-top: -6rem;
+  }
+
+  .contact-header {
+    color: var(--color-text-light-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15rem;
+    h1 {
+      font-size: 4rem;
+    }
+  }
+}
