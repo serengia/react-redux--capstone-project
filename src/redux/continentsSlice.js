@@ -60,12 +60,17 @@ const continentsSlice = createSlice({
 
   reducers: {
     triggerContinentSearch: (state, action) => {
-      const searchTerm = action.payload;
-      state.continentSearchTerm = searchTerm?.toLowerCase();
+      const searchTerm = action.payload?.toLowerCase();
+      state.continentSearchTerm = searchTerm;
     },
     triggerContinentFilterByCases: (state, action) => {
-      const numArr = action.payload?.split(",");
-      state.continentFilterByCasesNumArr = numArr;
+      const value = action.payload;
+      if (value.trim().length < 1) {
+        // reset filter
+        state.continentFilterByCasesNumArr = [];
+      } else {
+        state.continentFilterByCasesNumArr = value.split(",");
+      }
     },
   },
   extraReducers: (builder) => {

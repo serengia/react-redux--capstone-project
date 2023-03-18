@@ -14,10 +14,10 @@ export default function SearchByCounty() {
     const inputVal = e.target.value;
     setSearchTerm(inputVal);
     if (view === "countries") {
-      dispatch(countriesActions.triggerCountrySearch(searchTerm));
+      dispatch(countriesActions.triggerCountrySearch(inputVal));
     }
     if (view === "continents") {
-      dispatch(continentsActions.triggerContinentSearch(searchTerm));
+      dispatch(continentsActions.triggerContinentSearch(inputVal));
     }
   };
 
@@ -34,6 +34,7 @@ export default function SearchByCounty() {
       <div className={s["search-box"]}>
         <input
           type="text"
+          value={searchTerm}
           placeholder={`e.g. ${dynamicPlaceholder}`}
           onChange={handleFilter}
         />

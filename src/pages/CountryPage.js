@@ -32,7 +32,15 @@ export default function CountryPage() {
         extraComps={extraComps}
       />
       <div className={`${s["body-content"]} row`}>
-        <Country data={countryData} />
+        <div className={s["hero"]}>
+          <div className={s["card"]}>
+            <h3 className={s["cases"]}>Reported cases</h3>
+            <span className={s["count"]}>
+              {countryData.cases.toLocaleString()}
+            </span>
+          </div>
+          <Country data={countryData} />
+        </div>
       </div>
     </main>
   );

@@ -44,12 +44,17 @@ const countriesSlice = createSlice({
   initialState,
   reducers: {
     triggerCountrySearch: (state, action) => {
-      const searchTerm = action.payload;
-      state.countrySearchTerm = searchTerm?.toLowerCase();
+      const searchTerm = action.payload?.toLowerCase();
+      state.countrySearchTerm = searchTerm;
     },
     triggerCountryFilterByCases: (state, action) => {
-      const numArr = action.payload?.split(",");
-      state.countryFilterByCasesNumArr = numArr;
+      const value = action.payload;
+      if (value.trim().length < 1) {
+        // Reset filters
+        state.countryFilterByCasesNumArr = [];
+      } else {
+        state.countryFilterByCasesNumArr = value.split(",");
+      }
     },
   },
   extraReducers: (builder) => {

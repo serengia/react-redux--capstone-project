@@ -11,12 +11,10 @@ import s from "./CountriesDataPage.module.scss";
 
 function CountriesDataPage() {
   const dispatch = useDispatch();
-  const { countries, countrySearchTerm } = useSelector(
-    (state) => state.countries
-  );
-  const { continents, continentSearchTerm } = useSelector(
-    (state) => state.continents
-  );
+  const { countries, countrySearchTerm, countryFilterByCasesNumArr } =
+    useSelector((state) => state.countries);
+  const { continents, continentSearchTerm, continentFilterByCasesNumArr } =
+    useSelector((state) => state.continents);
   const { view } = useSelector((state) => state.ui);
 
   useEffect(() => {
@@ -25,14 +23,40 @@ function CountriesDataPage() {
     dispatch(getGlobalData());
   }, [dispatch]);
 
+  // eslint-disable-next-line no-unused-vars
+  function filterCountriesByCasesMiddleware(dataArr) {
+    if (countryFilterByCasesNumArr.length === 0) {
+      return dataArr;
+    }
+    return dataArr.filter(
+      (item) =>
+        item.cases >= +countryFilterByCasesNumArr[0] &&
+        item.cases <= +countryFilterByCasesNumArr[1]
+    );
+  }
+
+  // eslint-disable-next-line no-unused-vars
+  function filterContinentsByCasesMiddleware(dataArr) {
+    if (continentFilterByCasesNumArr.length === 0) {
+      return dataArr;
+    }
+    return dataArr.filter(
+      (item) =>
+        item.cases >= +continentFilterByCasesNumArr[0] &&
+        item.cases <= +continentFilterByCasesNumArr[1]
+    );
+  }
+
+  // eslint-disable-next-line no-unused-vars
   const filterCountries = (dataArr) => {
-    return dataArr.filter((item) =>
+    return filterCountriesByCasesMiddleware(dataArr).filter((item) =>
       item.country.toLowerCase().includes(countrySearchTerm)
     );
   };
 
+  // eslint-disable-next-line no-unused-vars
   const filterContinents = (dataArr) => {
-    return dataArr.filter((item) =>
+    return filterContinentsByCasesMiddleware(dataArr).filter((item) =>
       item.continent.toLowerCase().includes(continentSearchTerm)
     );
   };
@@ -44,7 +68,7 @@ function CountriesDataPage() {
         <GlobalStats />
         {view === "countries" && (
           <div className={s["countries-view"]}>
-            <ul>
+            <ul className={s["countries-list"]}>
               {filterCountries(countries).map((c) => (
                 <Country key={c.country} data={c} />
               ))}
@@ -54,7 +78,7 @@ function CountriesDataPage() {
 
         {view === "continents" && (
           <div className={s["continents-view"]}>
-            <ul>
+            <ul className={s["continents-list"]}>
               {filterContinents(continents).map((con) => (
                 <Continent key={con.continent} data={con} />
               ))}

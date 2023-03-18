@@ -4,4 +4,10 @@
   .display-wrapper {
     padding: 4rem 0;
   }
+
+  .countries-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
 }
