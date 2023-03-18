@@ -36,7 +36,7 @@ export default function Continent(props) {
       </h2>
       <hr className="divider" />
       <div className={s["stats"]}>
-        <ul>
+        <ul className={s["stats-list"]}>
           <li>
             Cases: <span> {cases}</span>
           </li>
@@ -68,7 +68,7 @@ export default function Continent(props) {
       </div>
       <p className={s["updated-time"]}>
         <HiOutlineClock className={s["icon"]} /> Updated at:{" "}
-        <span>{timestampToDate(updated)}</span>
+        <span className={s["time"]}>{timestampToDate(updated)}</span>
       </p>
       <div className={s["countries-wrapper"]}>
         <button
@@ -78,7 +78,7 @@ export default function Continent(props) {
         >
           {!showCountries && (
             <div className={`${s["show"]} ${s["option"]}`}>
-              <span>
+              <span className={s["icon-wrapper"]}>
                 <HiPlus className={s["icon"]} />
               </span>
               <p>Show countries</p>
@@ -86,7 +86,7 @@ export default function Continent(props) {
           )}
           {showCountries && (
             <div className={`${s["hide"]} ${s["option"]}`}>
-              <span>
+              <span className={s["icon-wrapper"]}>
                 <HiMinus className={s["icon"]} />
               </span>
               <p>Hide countries</p>

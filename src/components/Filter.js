@@ -5,11 +5,6 @@ import { continentsActions } from "../redux/continentsSlice";
 import { countriesActions } from "../redux/countriesSlice";
 import s from "./Filter.module.scss";
 
-// ASC
-// arr.sort((a, b) => a.cases - b.cases)
-// DSC
-// arr.sort((b, a) => a.cases - b.cases)
-
 export default function Filter() {
   const [numStr, setNumStr] = useState("");
   const [showClearButton, setShowClearButton] = useState(false);

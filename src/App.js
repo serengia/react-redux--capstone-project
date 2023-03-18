@@ -11,7 +11,7 @@ import ContactPage from "./pages/ContactPage";
 import CountriesDataPage from "./pages/CountriesDataPage";
 import CountryPage from "./pages/CountryPage";
 
-const router = createBrowserRouter(
+export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<CountriesDataPage />} />

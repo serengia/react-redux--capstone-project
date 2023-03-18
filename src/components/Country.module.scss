@@ -1,12 +1,13 @@
 .country {
   padding: 2rem;
   background-color: #fff;
-  box-shadow: 0 0 0.5re 1rem rgba(0, 0, 0, 0.02);
+  box-shadow: 0 0 0.5rem 1rem rgba(0, 0, 0, 0.02);
 
   .header {
     display: flex;
     margin: 1rem 0;
     gap: 1rem;
+
     .flag {
       flex: 1;
       border-radius: 3px;
@@ -18,7 +19,7 @@
     }
 
     .title {
-      span {
+      .country {
         color: var(--color-text-dark-1);
       }
     }
@@ -28,6 +29,7 @@
         font-size: 2.4rem;
       }
     }
+
     @media (max-width: 620px) {
       .title {
         font-size: 2rem;
@@ -39,16 +41,19 @@
     background-color: rgba(0, 17, 40, 0.119);
     border-radius: 3px;
     padding: 1rem;
+
     .stats-list {
       padding: 1rem 0;
       list-style: none;
       font-size: 1.6rem;
       columns: 2;
+
       li {
         span {
           font-weight: 600;
           color: var(--color-text-dark-1);
         }
+
         margin-bottom: 0.6rem;
       }
     }
@@ -61,12 +66,14 @@
     // color: var(--color-text-dark-1);
     font-weight: 600;
     gap: 1rem;
+
     .icon {
       font-size: 2.4rem;
       color: var(--color-text-dark-1);
       font-weight: bold;
     }
-    span {
+
+    .time {
       font-weight: 600;
       color: var(--color-text-dark-1);
     }

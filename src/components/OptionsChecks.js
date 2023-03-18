@@ -8,13 +8,11 @@ export default function OptionsChecks() {
   const dispatch = useDispatch();
   const handlerContinentChecker = (e) => {
     if (e.target.checked) {
-      console.log("YEEH!! Continet checked!");
       dispatch(uiActions.checkContinents());
     }
   };
   const handlerCountryChecker = (e) => {
     if (e.target.checked) {
-      console.log("YEEH!! Country checked!");
       dispatch(uiActions.checkCountries());
     }
   };

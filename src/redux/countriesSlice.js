@@ -37,6 +37,7 @@ const initialState = {
   country: {},
   countrySearchTerm: "",
   countryFilterByCasesNumArr: [],
+  sortCountriesBy: "",
 };
 
 const countriesSlice = createSlice({
@@ -55,6 +56,15 @@ const countriesSlice = createSlice({
       } else {
         state.countryFilterByCasesNumArr = value.split(",");
       }
+    },
+    sortCountriesAscending: (state) => {
+      state.sortBy = "asc";
+    },
+    sortCountriesDescending: (state) => {
+      state.sortBy = "dsc";
+    },
+    resetCountriesSort: (state) => {
+      state.sortBy = "";
     },
   },
   extraReducers: (builder) => {

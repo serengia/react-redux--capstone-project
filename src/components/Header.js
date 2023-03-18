@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { HiAdjustments, HiOutlineDownload, HiOutlineX } from "react-icons/hi";
+import { HiMenuAlt4, HiOutlineDownload, HiOutlineX } from "react-icons/hi";
+
 import s from "./Header.module.scss";
 
 function Header() {
@@ -9,14 +10,6 @@ function Header() {
 
   const showPopperHandler = () => {
     setShowPopper(!showPopper);
-  };
-
-  const sortHandler = () => {
-    setShowPopper(false);
-  };
-
-  const resetSortHandler = () => {
-    setShowPopper(false);
   };
 
   return (
@@ -41,7 +34,7 @@ function Header() {
             </li>
           </ul>
           {!showPopper && (
-            <HiAdjustments
+            <HiMenuAlt4
               className={s["adjustments-icon"]}
               onClick={showPopperHandler}
             />
@@ -56,21 +49,6 @@ function Header() {
 
           {showPopper && (
             <div className={s["popper-wrapper"]}>
-              <button
-                type="button"
-                className={`${s["sort-btn"]} ${s["popper-btn"]}`}
-                onClick={sortHandler}
-              >
-                Sort Ascending
-              </button>
-              <button
-                type="button"
-                className={`${s["reset-sort-btn"]} ${s["popper-btn"]}`}
-                onClick={resetSortHandler}
-              >
-                Default Sorting
-              </button>
-              <hr className="divider" />
               <Link
                 className={s["nav-link"]}
                 to="/"

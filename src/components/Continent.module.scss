@@ -2,7 +2,7 @@
   margin-bottom: 4rem;
   padding: 2rem;
   background-color: #fff;
-  box-shadow: 0 0 0.5re 1rem rgba(0, 0, 0, 0.02);
+  box-shadow: 0 0 0.5rem 1rem rgba(0, 0, 0, 0.02);
 
   .title {
     span {
@@ -15,13 +15,15 @@
   }
 
   .stats {
-    ul {
+    .stats-list {
       padding: 1rem 0;
       list-style: none;
       columns: 2;
       font-size: 1.6rem;
+
       li {
         margin-bottom: 0.5rem;
+
         span {
           font-weight: 600;
           color: var(--color-text-dark-1);
@@ -38,15 +40,16 @@
     margin: 2rem 0;
     display: flex;
     align-items: center;
-    // color: var(--color-text-dark-1);
     font-weight: 600;
     gap: 1rem;
+
     .icon {
       font-size: 2.4rem;
       color: var(--color-text-dark-1);
       font-weight: bold;
     }
-    span {
+
+    .time {
       font-weight: 600;
       color: var(--color-text-dark-1);
     }
@@ -61,6 +64,7 @@
         border-left: solid 1px #ddd;
         border-right: solid 1px #ddd;
         border-bottom: solid 1px #ddd;
+
         li {
           margin-bottom: 1rem;
         }
@@ -81,6 +85,7 @@
           text-decoration: none;
           transition: all 0.2s;
         }
+
         &:hover,
         &:active {
           color: var(--color-text-dark-1);
@@ -103,28 +108,31 @@
       align-items: center;
       gap: 2rem;
 
-      span {
-        background-color: rgba(#001128, 0.3);
+      .icon-wrapper {
+        background-color: #00112834;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 1rem;
         border-radius: 50%;
+
         .icon {
           font-size: 3rem;
         }
       }
+
       p {
         font-size: 2rem;
         font-weight: 600;
       }
 
       @media (max-width: 500px) {
-        span {
+        .icon-wrapper {
           .icon {
             font-size: 2rem;
           }
         }
+
         p {
           font-size: 1.8rem;
           font-weight: 500;

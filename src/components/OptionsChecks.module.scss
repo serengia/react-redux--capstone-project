@@ -1,9 +1,8 @@
 .options-check {
-  .header {
-  }
   .body {
     display: flex;
     gap: 2rem;
+
     .checkbox-wrapper {
       display: flex;
       align-items: center;
@@ -12,6 +11,7 @@
       label {
         font-size: 1.6rem;
       }
+
       input {
         width: 1.8rem;
         height: 1.8rem;

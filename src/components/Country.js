@@ -31,7 +31,7 @@ export default function Country(props) {
         />
         <div className={s["details"]}>
           <h2 className={s["title"]}>
-            Country: <span>{country}</span>
+            Country: <span className={s["country"]}>{country}</span>
           </h2>
           <p className={s["detail"]}>
             Population: <span>{population}</span>
@@ -72,7 +72,7 @@ export default function Country(props) {
       </div>
       <p className={s["updated-time"]}>
         <HiOutlineClock className={s["icon"]} /> Updated at:{" "}
-        <span>{timestampToDate(updated)}</span>
+        <span className="time">{timestampToDate(updated)}</span>
       </p>
     </div>
   );

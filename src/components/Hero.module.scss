@@ -10,6 +10,7 @@
     z-index: 5;
     position: relative;
     padding: 2rem 0 4rem 0;
+
     .main-text {
       font-size: 4rem;
       font-weight: 600;
@@ -24,13 +25,15 @@
     }
 
     .filter-container {
-      background-color: rgba(#f0f4fa, 0.9);
+      background-color: #f0f4fa;
       padding: 2rem;
       border-radius: 0.5rem;
       display: flex;
       gap: 3rem;
+
       & > * {
         flex: 1;
+
         &:not(:last-child) {
           border-right: solid 2px var(--color-grey-2);
         }
