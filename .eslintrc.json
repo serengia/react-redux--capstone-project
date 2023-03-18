@@ -37,7 +37,10 @@
     "import/no-extraneous-dependencies": "off",
     "operator-linebreak": "off",
     "dot-notation": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "no-underscore-dangle": "off",
+    "function-paren-newline": "off",
+    "arrow-body-style": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
 }

@@ -1,9 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import mealsSlice from "./mealsSlice";
+import continentsSlice from "./continentsSlice";
+import countriesSlice from "./countriesSlice";
+import UISlice from "./UISlice";
 
 const store = configureStore({
   reducer: {
-    meals: mealsSlice,
+    continents: continentsSlice,
+    countries: countriesSlice,
+    ui: UISlice,
   },
 });
 

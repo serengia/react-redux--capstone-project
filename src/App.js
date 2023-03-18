@@ -8,13 +8,15 @@ import {
 } from "react-router-dom";
 import RootLayout from "./Layout/RootLayout";
 import ContactPage from "./pages/ContactPage";
-import MealsPage from "./pages/MealsPage";
+import CountriesDataPage from "./pages/CountriesDataPage";
+import CountryPage from "./pages/CountryPage";
 
-const router = createBrowserRouter(
+export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route index element={<MealsPage />} />
-      <Route path="my-profile" element={<ContactPage />} />
+      <Route index element={<CountriesDataPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/countries/:country" element={<CountryPage />} />
     </Route>
   )
 );

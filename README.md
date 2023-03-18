@@ -23,9 +23,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# Food react App <a name="about-project"></a>
+# Covid-19 Data Directory React App <a name="about-project"></a>
 
-This application utilizes the food API to display different foods with their respective details including a video on how to prepare the food.
+This application utilizes the Covid 19 API to get and display live Covid -19 stats by country and continent.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -41,29 +41,17 @@ This application utilizes the food API to display different foods with their res
   </ul>
 </details>
 
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
-
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
 > The application has the following key features.
 
-- **View all meals**
-- **Filter meals with different meta data**
-- **View a meal details**
+- **Toggle between country view and continent view**
+- **Search data by country**
+- **Search data by continent**
+- **Filter by reported cases range**
+- **Conveniently get country by continent view**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -71,9 +59,13 @@ This application utilizes the food API to display different foods with their res
 
 ## 🚀 Live project <a name="live-demo"></a>
 
-Coming soon
+View the live project
 
-- [Live Project Link](https://serecode-spacex-travelers-app.netlify.app)
+- [Live Project Link](https://covid-19-data-app.onrender.com/)
+
+## Video Presentation
+
+Watch a [live video](https://drive.google.com/file/d/1Kjazv2RifpOWOOmRV6kyEmZum_2WBExG/view?usp=sharing) presentation
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -169,14 +161,6 @@ Example:
 
 <!-- FUTURE FEATURES -->
 
-## 🔭 Future Features <a name="future-features"></a>
-
-> The finished application will have the following features
-
-- [ ] **Fetch books...**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
@@ -191,7 +175,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments <a name="acknowledgements"></a>
 
-- Hat tip to anyone who inspired this project
+- The Web App design was inspired by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
 
 ## 📝 License <a name="license"></a>
 
