@@ -41,20 +41,6 @@ This application utilizes the Covid 19 API to get and display live Covid -19 sta
   </ul>
 </details>
 
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
-
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
@@ -175,14 +161,6 @@ Example:
 
 <!-- FUTURE FEATURES -->
 
-## 🔭 Future Features <a name="future-features"></a>
-
-> The finished application will have the following features
-
-- [ ] **Fetch books...**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
@@ -197,7 +175,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments <a name="acknowledgements"></a>
 
-- Hat tip to anyone who inspired this project
+- The Web App design was inspired by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
 
 ## 📝 License <a name="license"></a>
 
