@@ -23,9 +23,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# Food react App <a name="about-project"></a>
+# Covid-19 Data Directory React App <a name="about-project"></a>
 
-This application utilizes the food API to display different foods with their respective details including a video on how to prepare the food.
+This application utilizes the Covid 19 API to get and display live Covid -19 stats by country and continent.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -61,9 +61,11 @@ This application utilizes the food API to display different foods with their res
 
 > The application has the following key features.
 
-- **View all meals**
-- **Filter meals with different meta data**
-- **View a meal details**
+- **Toggle between country view and continent view**
+- **Search data by country**
+- **Search data by continent**
+- **Filter by reported cases range**
+- **Conveniently get country by continent view**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
