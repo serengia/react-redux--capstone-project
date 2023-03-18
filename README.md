@@ -77,6 +77,10 @@ View the live project
 
 - [Live Project Link](https://covid-19-data-app.onrender.com/)
 
+## Video Presentation
+
+Watch a [live video](https://drive.google.com/file/d/1Kjazv2RifpOWOOmRV6kyEmZum_2WBExG/view?usp=sharing) presentation
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->

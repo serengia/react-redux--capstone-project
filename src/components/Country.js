@@ -31,7 +31,7 @@ export default function Country(props) {
         />
         <div className={s["details"]}>
           <h2 className={s["title"]}>
-            Country: <span className={s["country"]}>{country}</span>
+            Country: <span className={s["country-name"]}>{country}</span>
           </h2>
           <p className={s["detail"]}>
             Population: <span>{population}</span>
