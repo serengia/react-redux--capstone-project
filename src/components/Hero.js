@@ -19,8 +19,7 @@ export default function Hero({
         {showFilters && (
           <div className={s["filter-container"]}>
             <OptionsChecks />
-            <Filter title="Filter by reported cases" />
-            {/* <Filter title="Filter by recovery rates" /> */}
+            <Filter />
             <SearchByCounty />
           </div>
         )}

@@ -25,6 +25,18 @@ function CountriesDataPage() {
     dispatch(getGlobalData());
   }, [dispatch]);
 
+  const filterCountries = (dataArr) => {
+    return dataArr.filter((item) =>
+      item.country.toLowerCase().includes(countrySearchTerm)
+    );
+  };
+
+  const filterContinents = (dataArr) => {
+    return dataArr.filter((item) =>
+      item.continent.toLowerCase().includes(continentSearchTerm)
+    );
+  };
+
   return (
     <main className={s["home-page"]}>
       <Hero />
@@ -33,13 +45,9 @@ function CountriesDataPage() {
         {view === "countries" && (
           <div className={s["countries-view"]}>
             <ul>
-              {countries
-                .filter((c) =>
-                  c.country.toLowerCase().includes(countrySearchTerm)
-                )
-                .map((c) => (
-                  <Country key={c.country} data={c} />
-                ))}
+              {filterCountries(countries).map((c) => (
+                <Country key={c.country} data={c} />
+              ))}
             </ul>
           </div>
         )}
@@ -47,13 +55,9 @@ function CountriesDataPage() {
         {view === "continents" && (
           <div className={s["continents-view"]}>
             <ul>
-              {continents
-                .filter((c) =>
-                  c.continent.toLowerCase().includes(continentSearchTerm)
-                )
-                .map((con) => (
-                  <Continent key={con.continent} data={con} />
-                ))}
+              {filterContinents(continents).map((con) => (
+                <Continent key={con.continent} data={con} />
+              ))}
             </ul>
           </div>
         )}

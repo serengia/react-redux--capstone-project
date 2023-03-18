@@ -51,6 +51,7 @@ const initialState = {
   continent: {},
   continentSearchTerm: "",
   global: {},
+  continentFilterByCasesNumArr: [],
 };
 
 const continentsSlice = createSlice({
@@ -61,6 +62,10 @@ const continentsSlice = createSlice({
     triggerContinentSearch: (state, action) => {
       const searchTerm = action.payload;
       state.continentSearchTerm = searchTerm?.toLowerCase();
+    },
+    triggerContinentFilterByCases: (state, action) => {
+      const numArr = action.payload?.split(",");
+      state.continentFilterByCasesNumArr = numArr;
     },
   },
   extraReducers: (builder) => {

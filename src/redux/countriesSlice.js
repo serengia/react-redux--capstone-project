@@ -36,6 +36,7 @@ const initialState = {
   countries: [],
   country: {},
   countrySearchTerm: "",
+  countryFilterByCasesNumArr: [],
 };
 
 const countriesSlice = createSlice({
@@ -45,6 +46,10 @@ const countriesSlice = createSlice({
     triggerCountrySearch: (state, action) => {
       const searchTerm = action.payload;
       state.countrySearchTerm = searchTerm?.toLowerCase();
+    },
+    triggerCountryFilterByCases: (state, action) => {
+      const numArr = action.payload?.split(",");
+      state.countryFilterByCasesNumArr = numArr;
     },
   },
   extraReducers: (builder) => {
