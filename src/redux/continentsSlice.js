@@ -112,7 +112,6 @@ const continentsSlice = createSlice({
       .addCase(getGlobalData.fulfilled, (state, action) => {
         state.isLoading = false;
         const res = action.payload;
-        console.log("HRE IS GLOBAL DATA>", res);
 
         state.global = res;
       })

@@ -6,6 +6,7 @@
     .built-by {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 0.5rem;
       line-height: 1;
       .heart-icon {

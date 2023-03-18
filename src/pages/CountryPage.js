@@ -11,10 +11,13 @@ export default function CountryPage() {
   const { countries } = useSelector((state) => state.countries);
 
   const countryData = countries.find((c) => c.country === countryName);
-  console.log("This is the country data,", countryData);
 
   if (!countryData) {
-    return <p>Could not find a result.</p>;
+    return (
+      <div className={`${s["error-wrapper"]} row`}>
+        <p>Could not find a result.</p>
+      </div>
+    );
   }
 
   const extraComps = (

@@ -22,6 +22,17 @@
         color: var(--color-text-dark-1);
       }
     }
+
+    @media (max-width: 100px) {
+      .title {
+        font-size: 2.4rem;
+      }
+    }
+    @media (max-width: 620px) {
+      .title {
+        font-size: 2rem;
+      }
+    }
   }
 
   .stats {

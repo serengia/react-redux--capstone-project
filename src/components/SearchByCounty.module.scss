@@ -6,6 +6,10 @@
       border: #eeeeee solid 1px;
       border-radius: 3px;
       font-family: inherit;
+
+      @media (max-width: 920px) {
+        width: 100%;
+      }
     }
   }
 }

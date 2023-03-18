@@ -7,7 +7,16 @@
 
   .countries-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
     gap: 4rem;
+
+    @media (max-width: 950px) {
+      grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+      gap: 2rem;
+    }
+    @media (max-width: 455px) {
+      grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+      gap: 2rem;
+    }
   }
 }

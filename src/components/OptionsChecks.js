@@ -32,7 +32,7 @@ export default function OptionsChecks() {
             id="check-continents"
             onChange={handlerContinentChecker}
           />
-          <label htmlFor="check-continents">Continent view</label>
+          <label htmlFor="check-continents">Continents</label>
         </div>
         <div className={`${s["checkbox-wrapper"]} ${s["countries-view"]}`}>
           <input
@@ -41,7 +41,7 @@ export default function OptionsChecks() {
             onChange={handlerCountryChecker}
             id="check-countries"
           />
-          <label htmlFor="check-countries">Country view</label>
+          <label htmlFor="check-countries">Countries</label>
         </div>
       </div>
     </div>
