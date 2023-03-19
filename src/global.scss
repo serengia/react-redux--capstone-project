@@ -55,3 +55,40 @@ body {
   height: 2px;
   background-color: #ddd;
 }
+
+.nav-link-active {
+  color: var(--color-text-dark-1) !important;
+  position: relative;
+
+  &::after,
+  &::before {
+    content: "";
+    height: 2px;
+    width: 2px;
+    background-color: #002c64;
+    position: absolute;
+    top: 50%;
+    left: -0.9rem;
+    border-radius: 50%;
+  }
+
+  &::before {
+    content: "";
+    animation: animateDot 0.5s infinite;
+  }
+
+  @keyframes animateDot {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    20% {
+      opacity: 0.9;
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(7);
+    }
+  }
+}

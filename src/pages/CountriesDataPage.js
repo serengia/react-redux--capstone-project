@@ -102,6 +102,7 @@ function CountriesDataPage() {
                 // eslint-disable-next-line react/no-array-index-key
                 <Country key={`${c.country}${i}`} data={c} />
               ))}
+              {countries.length === 0 && <p>No data to show.</p>}
             </ul>
           </div>
         )}
@@ -113,6 +114,7 @@ function CountriesDataPage() {
                 // eslint-disable-next-line react/no-array-index-key
                 <Continent key={`${con.continent}${i}`} data={con} />
               ))}
+              {continents.length === 0 && <p>No data to show.</p>}
             </ul>
           </div>
         )}

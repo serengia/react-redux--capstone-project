@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { HiAdjustments, HiOutlineDownload, HiOutlineX } from "react-icons/hi";
+import {
+  HiAdjustments,
+  HiOutlineDownload,
+  HiOutlineX,
+  HiUpload,
+  HiDownload,
+  HiOutlineSwitchVertical,
+} from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 
 import s from "./Header.module.scss";
@@ -44,10 +51,24 @@ function Header() {
         <nav className={s["nav"]}>
           <ul className={s["nav-list"]}>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink
+                to="/"
+                className={(state) =>
+                  state.isActive ? "nav-link-active" : null
+                }
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink
+                to="/contact"
+                className={(state) =>
+                  state.isActive ? "nav-link-active" : null
+                }
+              >
+                Contact
+              </NavLink>
             </li>
           </ul>
           {!showPopper && (
@@ -72,7 +93,7 @@ function Header() {
                   className={`${s["popper-btn"]} ${s["sort-btn"]}`}
                   onClick={sortAscendingHandler}
                 >
-                  Sort Ascending
+                  Sort Ascending <HiUpload className={s["btn-icon"]} />
                 </button>
               )}
               {sortBy === "asc" && (
@@ -81,7 +102,7 @@ function Header() {
                   className={`${s["popper-btn"]} ${s["sort-btn"]}`}
                   onClick={sortDescendingHandler}
                 >
-                  Sort Descending
+                  Sort Descending <HiDownload className={s["btn-icon"]} />
                 </button>
               )}
               {(sortBy === "asc" || sortBy === "dsc") && (
@@ -90,7 +111,10 @@ function Header() {
                   className={`${s["popper-btn"]} ${s["reset-sort-btn"]}`}
                   onClick={resetSortHandler}
                 >
-                  Reset sorting
+                  Reset sorting{" "}
+                  <HiOutlineSwitchVertical
+                    className={`${s["btn-icon"]} ${s["reset-btn-icon"]}`}
+                  />
                 </button>
               )}
               <hr className="divider" />
