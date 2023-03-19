@@ -1,7 +1,7 @@
 import React from "react";
-import { BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs";
 import DeveloperContent from "../components/DeveloperContent";
 import Hero from "../components/Hero";
+import Socials from "../components/Socials";
 import s from "./ContactPage.module.scss";
 
 function ContactPage() {
@@ -33,32 +33,7 @@ function ContactPage() {
           <div className={s["details"]}>
             <h3>James Serengia</h3>
             <h4>Software Engineer</h4>
-            <div className={s["socials"]}>
-              <a
-                href="https://github.com/serengia"
-                target="_blank"
-                rel="noreferrer"
-                className={s["icon-wrapper"]}
-              >
-                <BsGithub className={s["icon"]} />
-              </a>
-              <a
-                href="https://linkedin.com/in/james-serengia"
-                target="_blank"
-                rel="noreferrer"
-                className={s["icon-wrapper"]}
-              >
-                <BsLinkedin className={s["icon"]} />
-              </a>
-              <a
-                href="https://twitter.com/jamesserengia"
-                target="_blank"
-                rel="noreferrer"
-                className={s["icon-wrapper"]}
-              >
-                <BsTwitter className={s["icon"]} />
-              </a>
-            </div>
+            <Socials />
           </div>
         </div>
         <div className={s["content"]}>

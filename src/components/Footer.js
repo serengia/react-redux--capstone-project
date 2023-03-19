@@ -1,6 +1,7 @@
 import React from "react";
 import { HiHeart } from "react-icons/hi";
 import s from "./Footer.module.scss";
+import Socials from "./Socials";
 
 function Footer() {
   return (
@@ -15,6 +16,9 @@ function Footer() {
             James Serengia
           </a>
         </p>
+        <div className="socials">
+          <Socials />
+        </div>
       </div>
     </footer>
   );
