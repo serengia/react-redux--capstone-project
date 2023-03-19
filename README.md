@@ -25,7 +25,7 @@
 
 # Covid-19 Data Directory React App <a name="about-project"></a>
 
-This application utilizes the Covid 19 API to get and display live Covid -19 stats by country and continent.
+This Web App helps you find and filter Covid-10 data by continents and countries. It utilizes the Covid 19 data APA by [Open Disease Data API](https://disease.sh/docs)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -34,18 +34,11 @@ This application utilizes the Covid 19 API to get and display live Covid -19 sta
 - React
 - Redux
 
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
-
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-> The application has the following key features.
+The application has the following key features.
 
 - **Toggle between country view and continent view**
 - **Search data by country**

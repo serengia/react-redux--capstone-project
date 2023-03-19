@@ -1,15 +1,32 @@
 import React, { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { HiMenuAlt4, HiOutlineDownload, HiOutlineX } from "react-icons/hi";
+import { HiAdjustments, HiOutlineDownload, HiOutlineX } from "react-icons/hi";
+import { useDispatch, useSelector } from "react-redux";
 
 import s from "./Header.module.scss";
+import { uiActions } from "../redux/UISlice";
 
 function Header() {
   const { pathname } = useLocation();
   const [showPopper, setShowPopper] = useState(false);
+  const dispatch = useDispatch();
+  // eslint-disable-next-line no-unused-vars
+  const { sortBy, view, sortTriggered } = useSelector((state) => state.ui);
 
   const showPopperHandler = () => {
     setShowPopper(!showPopper);
+  };
+
+  const sortAscendingHandler = () => {
+    dispatch(uiActions.sortAscending());
+  };
+
+  const sortDescendingHandler = () => {
+    dispatch(uiActions.sortDescending());
+  };
+
+  const resetSortHandler = () => {
+    dispatch(uiActions.resetSort());
   };
 
   return (
@@ -34,7 +51,7 @@ function Header() {
             </li>
           </ul>
           {!showPopper && (
-            <HiMenuAlt4
+            <HiAdjustments
               className={s["adjustments-icon"]}
               onClick={showPopperHandler}
             />
@@ -49,6 +66,34 @@ function Header() {
 
           {showPopper && (
             <div className={s["popper-wrapper"]}>
+              {(sortBy === "" || sortBy === "dsc") && (
+                <button
+                  type="button"
+                  className={`${s["popper-btn"]} ${s["sort-btn"]}`}
+                  onClick={sortAscendingHandler}
+                >
+                  Sort Ascending
+                </button>
+              )}
+              {sortBy === "asc" && (
+                <button
+                  type="button"
+                  className={`${s["popper-btn"]} ${s["sort-btn"]}`}
+                  onClick={sortDescendingHandler}
+                >
+                  Sort Descending
+                </button>
+              )}
+              {(sortBy === "asc" || sortBy === "dsc") && (
+                <button
+                  type="button"
+                  className={`${s["popper-btn"]} ${s["reset-sort-btn"]}`}
+                  onClick={resetSortHandler}
+                >
+                  Reset sorting
+                </button>
+              )}
+              <hr className="divider" />
               <Link
                 className={s["nav-link"]}
                 to="/"

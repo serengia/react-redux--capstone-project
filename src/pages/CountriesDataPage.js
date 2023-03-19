@@ -11,17 +11,46 @@ import s from "./CountriesDataPage.module.scss";
 
 function CountriesDataPage() {
   const dispatch = useDispatch();
-  const { countries, countrySearchTerm, countryFilterByCasesNumArr } =
-    useSelector((state) => state.countries);
-  const { continents, continentSearchTerm, continentFilterByCasesNumArr } =
-    useSelector((state) => state.continents);
-  const { view } = useSelector((state) => state.ui);
+  const {
+    countries: countriesData,
+    countrySearchTerm,
+    countryFilterByCasesNumArr,
+  } = useSelector((state) => state.countries);
+  const {
+    continents: continentsData,
+    continentSearchTerm,
+    continentFilterByCasesNumArr,
+  } = useSelector((state) => state.continents);
+  const { sortTriggered, view, sortBy } = useSelector((state) => state.ui);
 
   useEffect(() => {
     dispatch(getCountriesData());
     dispatch(getContinentsData());
     dispatch(getGlobalData());
   }, [dispatch]);
+
+  let countries = [...countriesData];
+  let continents = [...continentsData];
+  const sortHelper = (options) => {
+    const { sortTriggered, view, sortBy } = options;
+
+    if (!sortTriggered) return;
+    if (view === "countries" && sortBy === "asc") {
+      countries = countries.sort((a, b) => a.cases - b.cases);
+    }
+    if (view === "countries" && sortBy === "dsc") {
+      countries = countries.sort((b, a) => a.cases - b.cases);
+    }
+    if (view === "continents" && sortBy === "asc") {
+      continents = continents.sort((a, b) => a.cases - b.cases);
+    }
+    if (view === "continents" && sortBy === "dsc") {
+      continents = continents.sort((b, a) => a.cases - b.cases);
+    }
+  };
+
+  // Calling sort Handler => acting as a middleware
+  sortHelper({ sortTriggered, view, sortBy });
 
   // eslint-disable-next-line no-unused-vars
   function filterCountriesByCasesMiddleware(dataArr) {
@@ -69,8 +98,9 @@ function CountriesDataPage() {
         {view === "countries" && (
           <div className={s["countries-view"]}>
             <ul className={s["countries-list"]}>
-              {filterCountries(countries).map((c) => (
-                <Country key={c.country} data={c} />
+              {filterCountries(countries).map((c, i) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <Country key={`${c.country}${i}`} data={c} />
               ))}
             </ul>
           </div>
@@ -79,8 +109,9 @@ function CountriesDataPage() {
         {view === "continents" && (
           <div className={s["continents-view"]}>
             <ul className={s["continents-list"]}>
-              {filterContinents(continents).map((con) => (
-                <Continent key={con.continent} data={con} />
+              {filterContinents(continents).map((con, i) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <Continent key={`${con.continent}${i}`} data={con} />
               ))}
             </ul>
           </div>

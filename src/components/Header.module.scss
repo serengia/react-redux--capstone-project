@@ -88,6 +88,7 @@
       list-style: none;
       display: flex;
       gap: 4rem;
+      margin-right: 4rem;
 
       li {
         a {
@@ -126,12 +127,4 @@
 
 .back-icon {
   transform: rotate(90deg);
-}
-
-.adjustments-icon {
-  display: none;
-
-  @media (max-width: 500px) {
-    display: block;
-  }
 }

@@ -52,7 +52,6 @@ const initialState = {
   continentSearchTerm: "",
   global: {},
   continentFilterByCasesNumArr: [],
-  sortContinentsBy: "",
 };
 
 const continentsSlice = createSlice({
@@ -72,17 +71,6 @@ const continentsSlice = createSlice({
       } else {
         state.continentFilterByCasesNumArr = value.split(",");
       }
-    },
-    sortContinentsAscending: (state) => {
-      state.sortBy = "asc";
-      state.continents = state.continents.sort((a, b) => a.cases - b.cases);
-    },
-    sortContinentsDescending: (state) => {
-      state.sortBy = "dsc";
-      state.continents = state.continents.sort((b, a) => a.cases - b.cases);
-    },
-    resetContinentsSort: (state) => {
-      state.sortBy = "";
     },
   },
   extraReducers: (builder) => {

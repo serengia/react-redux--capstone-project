@@ -3,6 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   view: "countries",
+  sortBy: "",
+  sortTriggered: false,
 };
 
 const uiSlice = createSlice({
@@ -14,6 +16,18 @@ const uiSlice = createSlice({
     },
     checkCountries: (state) => {
       state.view = "countries";
+    },
+    sortAscending: (state) => {
+      state.sortBy = "asc";
+      state.sortTriggered = true;
+    },
+    sortDescending: (state) => {
+      state.sortBy = "dsc";
+      state.sortTriggered = true;
+    },
+    resetSort: (state) => {
+      state.sortBy = "";
+      state.sortTriggered = false;
     },
   },
 });
