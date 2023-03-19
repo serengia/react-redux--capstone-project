@@ -64,11 +64,9 @@ const countriesSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getCountriesData.fulfilled, (state, action) => {
-        state.isLoading = false;
         const res = action.payload;
-        // console.log("Countries>", res);
-
         state.countries = res;
+        state.isLoading = false;
       })
       .addCase(getCountriesData.rejected, (state) => {
         state.isLoading = false;
@@ -80,10 +78,9 @@ const countriesSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getCountryData.fulfilled, (state, action) => {
-        state.isLoading = false;
         const res = action.payload;
-
         state.country = res;
+        state.isLoading = false;
       })
       .addCase(getCountryData.rejected, (state) => {
         state.isLoading = false;

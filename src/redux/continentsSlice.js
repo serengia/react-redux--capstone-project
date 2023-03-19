@@ -80,10 +80,9 @@ const continentsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getContinentsData.fulfilled, (state, action) => {
-        state.isLoading = false;
         const res = action.payload;
-
         state.continents = res;
+        state.isLoading = false;
       })
       .addCase(getContinentsData.rejected, (state) => {
         state.isLoading = false;
@@ -110,10 +109,9 @@ const continentsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getGlobalData.fulfilled, (state, action) => {
-        state.isLoading = false;
         const res = action.payload;
-
         state.global = res;
+        state.isLoading = false;
       })
       .addCase(getGlobalData.rejected, (state) => {
         state.isLoading = false;

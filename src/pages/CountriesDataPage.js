@@ -15,11 +15,13 @@ function CountriesDataPage() {
     countries: countriesData,
     countrySearchTerm,
     countryFilterByCasesNumArr,
+    isLoading: countriesLoading,
   } = useSelector((state) => state.countries);
   const {
     continents: continentsData,
     continentSearchTerm,
     continentFilterByCasesNumArr,
+    isLoading: continentsLoading,
   } = useSelector((state) => state.continents);
   const { sortTriggered, view, sortBy } = useSelector((state) => state.ui);
 
@@ -102,7 +104,10 @@ function CountriesDataPage() {
                 // eslint-disable-next-line react/no-array-index-key
                 <Country key={`${c.country}${i}`} data={c} />
               ))}
-              {countries.length === 0 && <p>No data to show.</p>}
+              {!countriesLoading && countries.length === 0 && (
+                <p>No data to show.</p>
+              )}
+              {countriesLoading && <p>Loading...</p>}
             </ul>
           </div>
         )}
@@ -114,7 +119,10 @@ function CountriesDataPage() {
                 // eslint-disable-next-line react/no-array-index-key
                 <Continent key={`${con.continent}${i}`} data={con} />
               ))}
-              {continents.length === 0 && <p>No data to show.</p>}
+              {!continentsLoading && continents.length === 0 && (
+                <p>No data to show.</p>
+              )}
+              {continentsLoading && <p>Loading...</p>}
             </ul>
           </div>
         )}
