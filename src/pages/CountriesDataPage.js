@@ -75,8 +75,8 @@ function CountriesDataPage() {
     }
     return dataArr.filter(
       (item) =>
-        item.cases >= +continentFilterByCasesNumArr[0] &&
-        item.cases <= +continentFilterByCasesNumArr[1]
+        item.cases >= continentFilterByCasesNumArr[0] &&
+        item.cases <= continentFilterByCasesNumArr[1]
     );
   }
 
@@ -98,7 +98,10 @@ function CountriesDataPage() {
   const lastPageIndex = currentPage * postsPerPage;
   const firstPageIndex = lastPageIndex - postsPerPage;
 
-  const paginatedCountries = countries.slice(firstPageIndex, lastPageIndex);
+  countries = filterCountries(countries);
+
+  // eslint-disable-next-line no-unused-vars
+  const newArr = countries.slice(firstPageIndex, lastPageIndex);
 
   const paginateMarkup = [];
   if (view === "countries") {
@@ -107,6 +110,7 @@ function CountriesDataPage() {
     for (let i = 1; i <= numOfPages; i++) {
       paginateMarkup.push(
         <button
+          key={i}
           type="button"
           data-num={i}
           onClick={(e) => setCurrentPage(+e.target.dataset.num)}
@@ -128,7 +132,7 @@ function CountriesDataPage() {
         {view === "countries" && (
           <div className={s["countries-view"]}>
             <ul className={s["countries-list"]}>
-              {filterCountries(paginatedCountries).map((c, i) => (
+              {countries.map((c, i) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <Country key={`${c.country}${i}`} data={c} />
               ))}
@@ -140,9 +144,9 @@ function CountriesDataPage() {
           </div>
         )}
 
-        {view === "countries" && (
+        {/* {view === "countries" && (
           <div className={s["pagination"]}>{paginateMarkup}</div>
-        )}
+        )} */}
 
         {view === "continents" && (
           <div className={s["continents-view"]}>

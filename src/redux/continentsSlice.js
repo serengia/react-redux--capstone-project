@@ -69,7 +69,10 @@ const continentsSlice = createSlice({
         // reset filter
         state.continentFilterByCasesNumArr = [];
       } else {
-        state.continentFilterByCasesNumArr = value.split(",");
+        const num1 = +value.split(",")[0];
+        const num2 = +value.split(",")[1];
+
+        state.continentFilterByCasesNumArr = [num1, num2];
       }
     },
   },

@@ -53,7 +53,9 @@ const countriesSlice = createSlice({
         // Reset filters
         state.countryFilterByCasesNumArr = [];
       } else {
-        state.countryFilterByCasesNumArr = value.split(",");
+        const num1 = +value.split(",")[0];
+        const num2 = +value.split(",")[1];
+        state.countryFilterByCasesNumArr = [num1, num2];
       }
     },
   },
