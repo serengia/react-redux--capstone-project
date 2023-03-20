@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Continent from "../components/Continent";
@@ -11,8 +11,6 @@ import s from "./CountriesDataPage.module.scss";
 
 function CountriesDataPage() {
   const dispatch = useDispatch();
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(20);
   const {
     countries: countriesData,
     countrySearchTerm,
@@ -94,36 +92,6 @@ function CountriesDataPage() {
     );
   };
 
-  // Pagination
-  const lastPageIndex = currentPage * postsPerPage;
-  const firstPageIndex = lastPageIndex - postsPerPage;
-
-  countries = filterCountries(countries);
-
-  // eslint-disable-next-line no-unused-vars
-  const newArr = countries.slice(firstPageIndex, lastPageIndex);
-
-  const paginateMarkup = [];
-  if (view === "countries") {
-    const numOfPages = Math.ceil(countries.length / postsPerPage);
-    // eslint-disable-next-line no-plusplus
-    for (let i = 1; i <= numOfPages; i++) {
-      paginateMarkup.push(
-        <button
-          key={i}
-          type="button"
-          data-num={i}
-          onClick={(e) => setCurrentPage(+e.target.dataset.num)}
-          className={`${s["paginate-btn"]} ${
-            i === currentPage ? s["paginate-btn-active"] : null
-          } `}
-        >
-          {i}
-        </button>
-      );
-    }
-  }
-
   return (
     <main className={s["home-page"]}>
       <Hero />
@@ -132,7 +100,7 @@ function CountriesDataPage() {
         {view === "countries" && (
           <div className={s["countries-view"]}>
             <ul className={s["countries-list"]}>
-              {countries.map((c, i) => (
+              {filterCountries(countries).map((c, i) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <Country key={`${c.country}${i}`} data={c} />
               ))}
@@ -143,10 +111,6 @@ function CountriesDataPage() {
             </ul>
           </div>
         )}
-
-        {/* {view === "countries" && (
-          <div className={s["pagination"]}>{paginateMarkup}</div>
-        )} */}
 
         {view === "continents" && (
           <div className={s["continents-view"]}>
