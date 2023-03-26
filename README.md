@@ -58,7 +58,7 @@ View the live project
 
 ## Video Presentation
 
-Watch a [live video](https://drive.google.com/file/d/1Kjazv2RifpOWOOmRV6kyEmZum_2WBExG/view?usp=sharing) presentation
+Watch a [live video](https://youtu.be/pKH6ocEhdEc) presentation
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
