@@ -60,7 +60,7 @@ const countriesSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    // get meals
+    // get data
     builder
       .addCase(getCountriesData.pending, (state) => {
         state.isLoading = true;
@@ -74,7 +74,7 @@ const countriesSlice = createSlice({
         state.isLoading = false;
       });
 
-    // get single meal
+    // get single country
     builder
       .addCase(getCountryData.pending, (state) => {
         state.isLoading = true;
